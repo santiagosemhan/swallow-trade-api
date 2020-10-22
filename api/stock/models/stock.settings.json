@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stock",
+  "info": {
+    "name": "Stock"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "producto": {
+      "model": "productos"
+    },
+    "espesor": {
+      "type": "string"
+    },
+    "ancho": {
+      "type": "string"
+    },
+    "largo": {
+      "type": "string"
+    },
+    "calidad": {
+      "type": "enumeration",
+      "enum": [
+        "Primera",
+        "Segunda",
+        "Tercera"
+      ]
+    },
+    "volumen_stock": {
+      "type": "enumeration",
+      "enum": [
+        "Pie",
+        "Metro_Cubico"
+      ]
+    },
+    "cantidad": {
+      "type": "float"
+    },
+    "especie": {
+      "model": "especie"
+    },
+    "comentarios": {
+      "type": "richtext"
+    }
+  }
+}

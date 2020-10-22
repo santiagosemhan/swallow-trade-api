@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "especies",
+  "info": {
+    "name": "especie"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    }
+  }
+}
