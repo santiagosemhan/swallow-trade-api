@@ -23,7 +23,7 @@ module.exports = ({ env }) => ({
         uri: env('MONGO_DSN', ''),
       },
       options: {
-        ssl: true,
+        ssl: env.bool('DATABASE_SSL', false),
       },
     },
   },
