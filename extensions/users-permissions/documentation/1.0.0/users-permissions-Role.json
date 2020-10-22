@@ -561,6 +561,9 @@
                 "role": {
                   "type": "string"
                 },
+                "empresa": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

@@ -1250,6 +1250,34 @@
                 "type": "string"
               }
             }
+          },
+          "empresa": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nombre": {
+                "type": "string"
+              },
+              "descripcion": {
+                "type": "string"
+              },
+              "users_permissions_users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1290,6 +1318,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "empresa": {
             "type": "string"
           },
           "created_by": {

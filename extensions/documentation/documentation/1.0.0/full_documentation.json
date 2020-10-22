@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/22/2020 9:44:36 AM"
+    "x-generation-date": "10/22/2020 6:14:15 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4260,6 +4260,57 @@
           },
           "descripcion": {
             "type": "string"
+          },
+          "users_permissions_users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "empresa": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -4270,6 +4321,12 @@
           },
           "descripcion": {
             "type": "string"
+          },
+          "users_permissions_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
@@ -4618,6 +4675,9 @@
                 "role": {
                   "type": "string"
                 },
+                "empresa": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4730,6 +4790,34 @@
                 "type": "string"
               }
             }
+          },
+          "empresa": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nombre": {
+                "type": "string"
+              },
+              "descripcion": {
+                "type": "string"
+              },
+              "users_permissions_users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -4770,6 +4858,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "empresa": {
             "type": "string"
           },
           "created_by": {

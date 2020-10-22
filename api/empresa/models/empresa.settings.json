@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "Empresas",
   "info": {
-    "name": "Empresa"
+    "name": "Empresa",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,6 +16,11 @@
     },
     "descripcion": {
       "type": "richtext"
+    },
+    "users_permissions_users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "empresa"
     }
   }
 }
