@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "companies",
+  "collectionName": "installations",
   "info": {
-    "name": "Empresa",
-    "description": ""
+    "name": "Installation"
   },
   "options": {
     "increments": true,
@@ -11,11 +10,11 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "name": {
-      "type": "string"
+    "installationId": {
+      "type": "uid"
     },
-    "description": {
-      "type": "richtext"
+    "pushToken": {
+      "type": "string"
     }
   }
 }
