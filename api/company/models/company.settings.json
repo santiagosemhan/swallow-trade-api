@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "Empresas",
+  "collectionName": "companies",
   "info": {
-    "name": "Empresa",
+    "name": "Company",
     "description": ""
   },
   "options": {
@@ -11,16 +11,11 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "nombre": {
+    "name": {
       "type": "string"
     },
-    "descripcion": {
+    "description": {
       "type": "richtext"
-    },
-    "users_permissions_users": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "empresa"
     }
   }
 }

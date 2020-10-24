@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/empresas": {
+    "/companies": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Empresa"
+                    "$ref": "#/components/schemas/Company"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empresa"
+                  "$ref": "#/components/schemas/Company"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEmpresa"
+                "$ref": "#/components/schemas/NewCompany"
               }
             }
           }
         }
       }
     },
-    "/empresas/count": {
+    "/companies/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "parameters": []
       }
     },
-    "/empresas/{id}": {
+    "/companies/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empresa"
+                  "$ref": "#/components/schemas/Company"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empresa"
+                  "$ref": "#/components/schemas/Company"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEmpresa"
+                "$ref": "#/components/schemas/NewCompany"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Empresa"
+          "Company"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Empresa": {
+      "Company": {
         "required": [
           "id"
         ],
@@ -522,78 +522,21 @@
           "id": {
             "type": "string"
           },
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "descripcion": {
+          "description": {
             "type": "string"
-          },
-          "users_permissions_users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "empresa": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
-      "NewEmpresa": {
+      "NewCompany": {
         "properties": {
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "descripcion": {
+          "description": {
             "type": "string"
-          },
-          "users_permissions_users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -607,7 +550,7 @@
   },
   "tags": [
     {
-      "name": "Empresa"
+      "name": "Company"
     }
   ]
 }

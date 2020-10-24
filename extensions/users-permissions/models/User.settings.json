@@ -59,9 +59,11 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "empresa": {
-      "via": "users_permissions_users",
-      "model": "empresa"
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
     }
   }
 }
