@@ -64,6 +64,9 @@
     },
     "lastName": {
       "type": "string"
+    },
+    "company": {
+      "model": "company"
     }
   }
 }

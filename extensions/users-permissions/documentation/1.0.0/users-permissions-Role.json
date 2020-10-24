@@ -567,6 +567,9 @@
                 "lastName": {
                   "type": "string"
                 },
+                "company": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
