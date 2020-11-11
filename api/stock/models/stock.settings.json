@@ -50,6 +50,15 @@
     "user": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
