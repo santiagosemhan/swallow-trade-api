@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/24/2020 5:49:32 PM"
+    "x-generation-date": "11/11/2020 4:19:25 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4983,7 +4983,7 @@
             "type": "string",
             "enum": [
               "Pie",
-              "Metro_Cubico"
+              "M3"
             ]
           },
           "cantidad": {
@@ -5013,6 +5013,60 @@
           },
           "comentarios": {
             "type": "string"
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -5042,7 +5096,7 @@
             "type": "string",
             "enum": [
               "Pie",
-              "Metro_Cubico"
+              "M3"
             ]
           },
           "cantidad": {
@@ -5052,6 +5106,9 @@
             "type": "string"
           },
           "comentarios": {
+            "type": "string"
+          },
+          "user": {
             "type": "string"
           },
           "created_by": {

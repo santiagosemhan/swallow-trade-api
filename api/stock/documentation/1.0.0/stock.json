@@ -572,7 +572,7 @@
             "type": "string",
             "enum": [
               "Pie",
-              "Metro_Cubico"
+              "M3"
             ]
           },
           "cantidad": {
@@ -602,6 +602,60 @@
           },
           "comentarios": {
             "type": "string"
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -631,7 +685,7 @@
             "type": "string",
             "enum": [
               "Pie",
-              "Metro_Cubico"
+              "M3"
             ]
           },
           "cantidad": {
@@ -641,6 +695,9 @@
             "type": "string"
           },
           "comentarios": {
+            "type": "string"
+          },
+          "user": {
             "type": "string"
           },
           "created_by": {

@@ -2,7 +2,7 @@
   "name": "app",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Swallow trade api",
   "scripts": {
     "develop": "strapi develop",
     "develop:admin": "strapi develop --watch-admin",
@@ -12,19 +12,19 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "strapi": "3.2.4",
-    "strapi-admin": "3.2.4",
-    "strapi-connector-mongoose": "3.2.4",
-    "strapi-plugin-content-manager": "3.2.4",
-    "strapi-plugin-content-type-builder": "3.2.4",
-    "strapi-plugin-documentation": "3.2.4",
-    "strapi-plugin-email": "3.2.4",
-    "strapi-plugin-upload": "3.2.4",
-    "strapi-plugin-users-permissions": "3.2.4",
-    "strapi-utils": "3.2.4"
+    "strapi": "^3.3.2",
+    "strapi-admin": "^3.3.2",
+    "strapi-connector-mongoose": "^3.3.2",
+    "strapi-plugin-content-manager": "^3.3.2",
+    "strapi-plugin-content-type-builder": "^3.3.2",
+    "strapi-plugin-documentation": "^3.3.2",
+    "strapi-plugin-email": "^3.3.2",
+    "strapi-plugin-upload": "^3.3.2",
+    "strapi-plugin-users-permissions": "^3.3.2",
+    "strapi-utils": "^3.3.2"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "santiagosemhan@gmail.com"
   },
   "strapi": {
     "uuid": "4604b2f1-e7cb-41c1-9217-32ca27bb7dc7"

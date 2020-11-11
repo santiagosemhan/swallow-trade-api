@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "stock",
   "info": {
-    "name": "Stock"
+    "name": "Stock",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -34,7 +35,7 @@
       "type": "enumeration",
       "enum": [
         "Pie",
-        "Metro_Cubico"
+        "M3"
       ]
     },
     "cantidad": {
@@ -45,6 +46,10 @@
     },
     "comentarios": {
       "type": "richtext"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
