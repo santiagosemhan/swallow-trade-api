@@ -22,6 +22,7 @@
     "strapi-plugin-mongodb-files": "^3.1.2",
     "strapi-plugin-upload": "^3.3.2",
     "strapi-plugin-users-permissions": "^3.3.2",
+    "strapi-provider-email-sendgrid": "^3.3.2",
     "strapi-provider-upload-mongodb": "^3.1.1",
     "strapi-utils": "^3.3.2"
   },
