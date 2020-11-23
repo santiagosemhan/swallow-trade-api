@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "Notification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false,
+    "populateCreatorFields": true
+  },
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "providerPayload": {
+      "type": "json"
+    },
+    "broadcast": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
