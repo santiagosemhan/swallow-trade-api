@@ -5,11 +5,11 @@ services:
     # command: strapi develop --watch-admin
     environment:
       DATABASE_CLIENT: mongo
-      DATABASE_NAME: swallow
-      DATABASE_HOST: docker.for.mac.host.internal
-      DATABASE_PORT: 27017
-      DATABASE_USERNAME: root
-      DATABASE_PASSWORD: root
+      ADMIN_URL: ${ADMIN_URL}
+      DATABASE_SSL: ${DATABASE_SSL}
+      EXPO_ACCESS_TOKEN: ${EXPO_ACCESS_TOKEN}
+      MONGO_DSN: ${MONGO_DSN}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
     volumes:
       - ./:/srv/app
     ports:
