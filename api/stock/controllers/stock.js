@@ -7,8 +7,7 @@ const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
  */
 
 module.exports = {
-
-/**
+  /**
    * Retrieve records.
    *
    * @return {Array}
@@ -25,10 +24,12 @@ module.exports = {
       entities = await strapi.services.stock.find(query);
     }
 
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.stock }));
+    return entities.map((entity) =>
+      sanitizeEntity(entity, { model: strapi.models.stock })
+    );
   },
 
- /**
+  /**
    * Retrieve a record.
    *
    * @return {Object}
@@ -49,13 +50,24 @@ module.exports = {
 
   async create(ctx) {
     let entity;
+    const user = ctx.state.user;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
-      data.user = ctx.state.user.id;
+      data.user = user;
       entity = await strapi.services.stock.create(data, { files });
     } else {
-      ctx.request.body.user = ctx.state.user.id;
+      ctx.request.body.user = user;
       entity = await strapi.services.stock.create(ctx.request.body);
+    }
+
+    const users = await strapi
+      .query('user', 'users-permissions')
+      .find({ 'role.name': 'Administrator' });
+
+
+    if (users.length) {
+      const message = `Ha recibido una nueva carga de stock de ${user.firstName} ${user.lastName}.`
+      strapi.services.pushnotifications.sendToUsers(message, users, { stock_id: entity.id })
     }
     return sanitizeEntity(entity, { model: strapi.models.stock });
   },
