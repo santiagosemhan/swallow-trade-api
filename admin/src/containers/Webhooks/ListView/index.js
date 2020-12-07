@@ -75,33 +75,10 @@ function ListView() {
     },
   };
 
-  const exportExcelButtonProps = {
-    label: addBtnLabel,
-    onClick: () => alert("exporta a excel wacho"),
-    color: 'primary',
-    type: 'button',
-    icon: <Plus fill="#007eff" width="11px" height="11px" />,
-    Component: props => {
-      if (canCreate) {
-        return <Button {...props} />;
-      }
-
-      return null;
-    },
-  };
-
   // Header props
   const actions = [
     {
       ...newButtonProps,
-      icon: true,
-      style: {
-        paddingLeft: 15,
-        paddingRight: 15,
-      },
-    },
-    {
-      ...exportExcelButtonProps,
       icon: true,
       style: {
         paddingLeft: 15,

@@ -503,53 +503,70 @@ function ListView({
       if (!canCreate) {
         return [];
       }
-
-      return [
-        {
+      const items = [];
+      if (listSchema.collectionName === "stock") {
+        items.push({
           label: "Export To Excel",
           onClick: async () => {
-            // alert(`exportar a excel el type ${label}`);
-            console.log(message);
             console.log(listSchema);
-            const { message } = await request('/export', {
+            const { filename, file } = await request('/export', {
               method: 'GET',
               params: {
                 collection: listSchema.collectionName
               }
             });
-            
+
+            const binary_string = window.atob(file);
+            const len = binary_string.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binary_string.charCodeAt(i);
+            }
+            const blob = new Blob(
+              [bytes.buffer],
+              { type: "application/vnd.ms-excel" }
+            );
+
+            let objectURL = window.URL.createObjectURL(blob);
+            let anchor = document.createElement("a");
+            anchor.href = objectURL;
+            anchor.download = `${filename}.xlsx`;
+            anchor.click();
+            URL.revokeObjectURL(objectURL);
           },
           style: { borderColor: "#1D6F42", backgroundColor: "#1D6F42" },
-        },
-        {
-          label: formatMessage(
-            {
-              id: "content-manager.containers.List.addAnEntry",
-            },
-            {
-              entity: label || "Content Manager",
-            }
-          ),
-          onClick: () => {
-            const trackerProperty = hasDraftAndPublish
-              ? { status: "draft" }
-              : {};
+        });
+      }
 
-            emitEvent("willCreateEntry", trackerProperty);
-            push({
-              pathname: `${pathname}/create`,
-            });
+      items.push({
+        label: formatMessage(
+          {
+            id: "content-manager.containers.List.addAnEntry",
           },
-          color: "primary",
-          type: "button",
-          icon: true,
-          style: {
-            paddingLeft: 15,
-            paddingRight: 15,
-            fontWeight: 600,
-          },
+          {
+            entity: label || "Content Manager",
+          }
+        ),
+        onClick: () => {
+          const trackerProperty = hasDraftAndPublish
+            ? { status: "draft" }
+            : {};
+
+          emitEvent("willCreateEntry", trackerProperty);
+          push({
+            pathname: `${pathname}/create`,
+          });
         },
-      ];
+        color: "primary",
+        type: "button",
+        icon: true,
+        style: {
+          paddingLeft: 15,
+          paddingRight: 15,
+          fontWeight: 600,
+        },
+      })
+      return items;
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [label, pathname, search, canCreate, formatMessage, hasDraftAndPublish]
