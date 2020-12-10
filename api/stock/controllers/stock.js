@@ -15,12 +15,12 @@ module.exports = {
 
   async find(ctx) {
     let entities;
+    const isAdministrator = ctx.state.user && ctx.state.user.role.name === "Administrator";
+    const query = isAdministrator ? ctx.query : { ...ctx.query, user: ctx.state.user.id };
     if (ctx.query._q) {
       // console.log(ctx.query);
-      entities = await strapi.services.stock.search(ctx.query);
+      entities = await strapi.services.stock.search(query);
     } else {
-      // console.log(ctx.state.user)
-      const query = { ...ctx.query, user: ctx.state.user.id };
       entities = await strapi.services.stock.find(query);
     }
 
