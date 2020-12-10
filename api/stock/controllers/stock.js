@@ -37,8 +37,9 @@ module.exports = {
 
   async findOne(ctx) {
     const { id } = ctx.params;
-    const user = ctx.state.user.id;
-    const entity = await strapi.services.stock.findOne({ id, user });
+    const isAdministrator = ctx.state.user && ctx.state.user.role.name === "Administrator";
+    const query = isAdministrator ? { id }: { id, user: ctx.state.user.id };
+    const entity = await strapi.services.stock.findOne(query);
     return sanitizeEntity(entity, { model: strapi.models.stock });
   },
 
