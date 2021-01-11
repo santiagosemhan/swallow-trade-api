@@ -64,7 +64,7 @@ const sendStock = async (stock, users) => {
     ancho: stock.ancho || '-',
     largo: stock.largo || '-',
     calidad: stock.calidad || '-',
-    volumen: stock.volumen || '-',
+    volumen: stock.volumen_stock || '-',
     cantidad: stock.cantidad || '-',
     especie: stock.especie.nombre,
     comentarios: stock.comentarios || '-',
