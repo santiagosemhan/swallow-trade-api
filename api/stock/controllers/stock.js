@@ -67,9 +67,14 @@ module.exports = {
 
 
     if (users.length) {
+      // email notification
+      strapi.services.mailnotifications.notifyNewStock(entity, users);
+
+      // push notification
       const message = `Ha recibido una nueva carga de stock de ${user.firstName} ${user.lastName}.`
       strapi.services.pushnotifications.sendToUsers(message, users, { stock_id: entity.id })
     }
+
     return sanitizeEntity(entity, { model: strapi.models.stock });
   },
 };

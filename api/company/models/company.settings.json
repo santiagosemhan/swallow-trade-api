@@ -16,6 +16,11 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "users": {
+      "via": "company",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }
