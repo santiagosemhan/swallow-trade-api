@@ -167,7 +167,7 @@
   "app.components.HomePage.welcome": "¡Bienvenido a bordo!",
   "app.components.HomePage.welcome.again": "¡Bienvenido ",
   "app.components.HomePage.welcomeBlock.content": "Estamos felices de tenerlo como miembro de Swallow Trade. Estamos constantemente en busca de comentarios así que no dude en enviarnos un mensaje.",
-  "app.components.HomePage.welcomeBlock.content.again": "Bienvenido a Swallow Trade. Esperamos que estes progresando en la carga de datos. Cualquier duda o sugerencia no dudes en consultar con el administrador.",
+  "app.components.HomePage.welcomeBlock.content.again": "Bienvenido a Swallow Trade. En tu backoffice vas a poder ver todos los datos que tus usuarios cargan. Cualquier duda o sugerencia no dudes en consultar con el administrador.",
   "app.components.HomePage.welcomeBlock.content.issues": "problema.",
   "app.components.HomePage.welcomeBlock.content.raise": " o reportar cualquier ",
   "app.components.ImgPreview.hint": "Arrastre y suelte el archivo en esta área o {browse} para subir un archivo.",
