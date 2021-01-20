@@ -1,3 +1,5 @@
+const { format, utcToZonedTime} = require("date-fns");
+
 const stockTemplate = {
   subject: 'Nuevo Stock de <%= company %> <%= fecha %>',
   text: `Nuevo stock de <%= company %>!
@@ -45,16 +47,9 @@ const sendStock = async (stock, users) => {
   const empresa = await strapi.services.company.findOne({
     id: stock.user.company,
   });
-  const d = new Date(stock.createdAt);
-  const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-  const mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
-  const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-  const h = d.getHours();
-  const m = d.getMinutes();
-  const s = d.getSeconds();
-
-  const fecha = `${da}-${mo}-${ye} ${h}:${m}:${s}`;
-
+  const date = new Date(stock.createdAt);
+  const zonedDate = utcToZonedTime(date, 'America/Argentina/Buenos_Aires');
+  const fecha = format(zonedDate, 'dd/MM/yyyy HH:mm:ss')
   const data = {
     company: empresa.name,
     usuario: stock.user.email,
