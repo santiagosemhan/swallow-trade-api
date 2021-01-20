@@ -1,4 +1,4 @@
-const { utcToZonedTime, format } = require('date-fns-timezone');
+const { format, utcToZonedTime } = require('date-fns-tz');
 
 const stockTemplate = {
   subject: 'Nuevo Stock de <%= company %> <%= fecha %>',
