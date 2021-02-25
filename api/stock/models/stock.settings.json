@@ -27,15 +27,16 @@
     "calidad": {
       "type": "enumeration",
       "enum": [
+        "Premium",
         "Primera",
-        "Segunda",
-        "Tercera"
+        "Segunda"
       ]
     },
     "volumen_stock": {
       "type": "enumeration",
       "enum": [
-        "Pie",
+        "Pie2",
+        "M2",
         "M3"
       ]
     },

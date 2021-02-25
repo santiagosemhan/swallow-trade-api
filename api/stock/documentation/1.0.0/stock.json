@@ -566,15 +566,16 @@
           "calidad": {
             "type": "string",
             "enum": [
+              "Premium",
               "Primera",
-              "Segunda",
-              "Tercera"
+              "Segunda"
             ]
           },
           "volumen_stock": {
             "type": "string",
             "enum": [
-              "Pie",
+              "Pie2",
+              "M2",
               "M3"
             ]
           },
@@ -752,15 +753,16 @@
           "calidad": {
             "type": "string",
             "enum": [
+              "Premium",
               "Primera",
-              "Segunda",
-              "Tercera"
+              "Segunda"
             ]
           },
           "volumen_stock": {
             "type": "string",
             "enum": [
-              "Pie",
+              "Pie2",
+              "M2",
               "M3"
             ]
           },
