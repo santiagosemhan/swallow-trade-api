@@ -1,4 +1,7 @@
 const { format, utcToZonedTime } = require('date-fns-tz');
+const { getAbsoluteServerUrl } = require('strapi-utils');
+
+const SERVER_URL = getAbsoluteServerUrl(strapi.config);
 
 const stockTemplate = {
   subject: 'Nuevo Stock de <%= company %> <%= fecha %>',
@@ -49,7 +52,7 @@ const sendStock = async (stock, users) => {
   });
   const date = new Date(stock.createdAt);
   const zonedDate = utcToZonedTime(date, 'America/Argentina/Buenos_Aires');
-  const fecha = format(zonedDate, 'dd/MM/yyyy HH:mm:ss')
+  const fecha = format(zonedDate, 'dd/MM/yyyy HH:mm:ss');
   const data = {
     company: empresa.name,
     usuario: stock.user.email,
@@ -65,9 +68,29 @@ const sendStock = async (stock, users) => {
     comentarios: stock.comentarios || '-',
   };
 
+  let attachments;
+  if (stock.imagenes.length) {
+    attachments = await Promise.all(
+      stock.imagenes.map((img) =>
+        axios
+          .get(`${SERVER_URL}${img.url}`, {
+            responseType: 'arraybuffer',
+          })
+          .then((response) => ({
+            content: Buffer.from(response.data, 'binary').toString('base64'),
+            filename: img.name,
+            ContentType: img.mime,
+            disposition: 'attachment',
+            contentId: img._id,
+          }))
+      )
+    );
+  }
+
   await strapi.plugins.email.services.email.sendTemplatedEmail(
     {
-      to: users.map(u => u.email)
+      to: users.map((u) => u.email),
+      attachments
       // from: is not specified, so it's the defaultFrom that will be used instead
     },
     stockTemplate,
